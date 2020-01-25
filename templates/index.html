@@ -3,12 +3,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Boggle</title>
 </head>
 <body>
-    // Make a table, and then loop through our rows to append to the table
-    {% for rows in board %}
-        
+    <table>
+        {% for row in board %}
+            <tr>
+            {% for cell in row %}
+                <td>{{cell}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    
+    
+    <form action="" id="submit-word">
+        <input type="text" name="guess" id="word-guess">
+        <input type="submit" value="Make a Guess">
+    </form>
+
+    
+    {% for word in words %}
+    <div>working</div>
+        <p>{{word}}</p>
     {% endfor %}
+
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
